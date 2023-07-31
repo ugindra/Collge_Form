@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <!-- First field -->
+            <div class="fields">
+                <label for="message">1. Introductory Remarks :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div><br>
+            <!-- second field -->
+            <div class="fields">
+                <label for="name">2. Activities related to the Governance:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <!-- National and international data entry -->            
+            <div class="container">
+                <label for="">3. Important Conferences / Seminars and Meetings organized :</label>
+                <button type="button" onclick="showNationalFields()">National</button>
+                <button type="button" onclick="showInternationalFields()">International</button>
+                <br>
+                <div class="form-group" id="nationalFields">
+                    <h3>National Data Entry</h3>
+                    <button type="button" onclick="addEntry('national')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Title of Conference / Seminar/ Meeting</th>
+                            <th>Date</th>
+                            <th>Purpose</th>
+                            <th>Participants/Target Audience</th>
+                            <th>Participants/Target Audience</th>
+                            <th>Any other details</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>                
+                <div class="form-group" id="internationalFields">
+                    <h3>International Data Entry</h3><br>
+                    <button type="button" onclick="addEntry('international')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Title of Conference / Seminar/ Meeting</th>
+                            <th>Date</th>
+                            <th>Purpose</th>
+                            <th>Participants/Target Audience</th>
+                            <th>Participants/Target Audience</th>
+                            <th>Any other details</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                
+                <!-- Data entry for Training & Workshops organized -->
+                <label for="">4. Training and Workshops Organized :</label>
+                <button type="button" onclick="showTrainingFields()">Click here to enter the data</button>
+                <div class="form-group" id="trainingFields"><br>
+                    <button type="button" onclick="addEntry('training')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Title of Training Program/ Workshop/FDP etc</th>
+                            <th>Date</th>
+                            <th>Purpose</th>
+                            <th>Target Audience</th>
+                            <th>Any other details</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br> <br>   
+
+                <!-- Circullar activities data entry -->
+                <label for="">5. Co-curricular Activities</label>
+                <button type="button" onclick="showCoCurricularFields()">Click here to enter the data</button>
+                <div class="form-group" id="coCurricularFields"><br>
+                    <button type="button" onclick="addEntry('coCurricular')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Name of the Activity</th>
+                            <th>Date</th>
+                            <th>Purpose</th>
+                            <th>Target Audience</th>
+                            <th>Any other details</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <br>
+
+                <!-- Ncc/Nss/Service activities -->
+                <label for="">6. NCC/NSS/Service Programs :</label><br>
+                <label for="">6.0 NCC Programs Data Entry :</label>
+                <button type="button" onclick="showNCCPrograms()">Click here to enter data</button>
+                <div class="form-group" id="nccProgramsFields"><br>
+                    <button type="button" onclick="addEntry('nccPrograms')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Name of the Activity</th>
+                            <th>Date</th>
+                            <th>Purpose</th>
+                            <th>Target Audience</th>
+                            <th>Any other details</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br><br>
+                <label for="">6.1 NSS Programs Data Entry :</label>
+                <button type="button" onclick="showNSSPrograms()">Click here to enter tha data</button>
+                <div class="form-group" id="nssProgramsFields"><br>
+                    <button type="button" onclick="addEntry('nssPrograms')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Name of the Activity</th>
+                                <th>Date</th>
+                                <th>Purpose</th>
+                                <th>Target Audience</th>
+                                <th>Any other details</th>
+                                <!-- Add more table headers as needed -->
+                            </tr>
+                        </tr>
+                    </table>
+                </div>
+                <br><br>
+
+                <!-- Service activities data entry -->
+                <label for="">6.2 Service Activities Data Entry :</label>
+                <button type="button" onclick="showServiceActivities()">Click here to enter the data</button>
+                <div class="form-group" id="serviceActivitiesFields"><br>
+                    <button type="button" onclick="addEntry('serviceActivities')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Name of the Activity</th>
+                                <th>Date</th>
+                                <th>Purpose</th>
+                                <th>Target Audience</th>
+                                <th>Any other details</th>
+                                <!-- Add more table headers as needed -->
+                            </tr>
+                        </tr>
+                    </table>
+                </div>
+                <br><br>
+
+                <!-- Research Activities : Research Projects : Research Publications  -->
+                <!-- Projects Sanctioned -->
+                <label for="">7.  Research Activities : Research Projects : Research Publications</label><br>
+                <label for="">7.0 Sponsored Research Projects sanctioned in the month of February 2023 :</label>
+                <button type="button" onclick="projectSanctioned()">Click here to enter the data</button>                
+                <div class="form-group" id="projectSanctionedFields"><br>                    
+                    <button type="button" onclick="addEntry('projectSanctioned')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Title of the Project</th>
+                            <th>Date of sanction</th>
+                            <th>Sponsored organization</th>
+                            <th>Grant Received</th>
+                            <th>Any other details</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br><br>
+                <!-- Projects completed -->
+                <label for="">7.1 Research Projects Completed in the month of February 2023 :</label>
+                <button type="button" onclick="projectCompleted()">Click here to enter the data</button>                
+                <div class="form-group" id="projectCompletedFields"><br>                    
+                    <button type="button" onclick="addEntry('projectCompleted')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Title of the Project</th>
+                            <th>Date of completion</th>
+                            <th>Sponsored organization</th>
+                            <th>Grant Received</th>
+                            <th>Any other details</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br><br>
+                <!-- No of journals -->
+                <label for="">7.2 Number of Journals (National /International) :</label>
+                <button type="button" onclick="journalNationalFields()">National</button>
+                <button type="button" onclick="journalInternationalFields()">International</button>
+                <br>
+                <div class="form-group" id="journalNationalFields">
+                    <h3>National Data Entry</h3>
+                    <button type="button" onclick="addEntry('journalNational')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Name of the Author(s)</th>
+                            <th>Title of the Paper</th>
+                            <th>Name of the Journal</th>
+                            <th>Link to access publication</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>                
+                <div class="form-group" id="journalInternationalFields">
+                    <h3>International Data Entry</h3><br>
+                    <button type="button" onclick="addEntry('journalInternational')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Name of the Author(s)</th>
+                            <th>Title of the Paper</th>
+                            <th>Name of the Journal</th>
+                            <th>Link to access publication</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br><br>         
+                <!-- Number of Conferences (National /International) -->
+                <label for="">7.3 Number of Conferences (National /International) :</label>
+                <button type="button" onclick="conferencesNationalFields()">National</button>
+                <button type="button" onclick="conferencesInternationalFields()">International</button>
+                <br>
+                <div class="form-group" id="conferenceNationalFields">
+                    <h3>National Data Entry</h3>
+                    <button type="button" onclick="addEntry('conferenceNational')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Name of the Author(s)</th>
+                            <th>Title of the Paper</th>
+                            <th>Details of Conference</th>
+                            <th>Link to access publication</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>                
+                <div class="form-group" id="conferenceInternationalFields">
+                    <h3>International Data Entry</h3><br>
+                    <button type="button" onclick="addEntry('conferenceInternational')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Name of the Author(s)</th>
+                            <th>Title of the Paper</th>
+                            <th>Details of Conference</th>
+                            <th>Link to access publication</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br><br>       
+                <!-- Number of Books/Book Chapters:  -->
+                <label for="">7.4 Number of Books/Book Chapters :</label>
+                <button type="button" onclick="booksBookChaptersFields()">Click here to add the data</button>
+                <div class="form-group" id="booksBookChaptersFields"><br>
+                    <button type="button" onclick="addEntry('booksBookChapters')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Authors</th>
+                            <th>Title of the book/book chapter</th>
+                            <th>Name of the publisher</th>
+                            <th>Other details</th>
+                            <th>Link to access publication</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br><br>  
+                <!-- Number of patients -->
+                <label for="">7.5 Number of patents :</label>
+                <button type="button" onclick="noOfPatientsFields()">Click here to add the data</button>
+                <div class="form-group" id="noOfPatientsFields"><br>
+                    <button type="button" onclick="addEntry('noOfPatients')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Authors</th>
+                            <th>Title</th>
+                            <th>Application number</th>
+                            <th>Link to access details</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br><br> 
+                <!-- Students support practices -->
+                <div class="fields">
+                    <label for="message">8. Students support practices<br>
+                         *Provide details of student support practices initiated during this month :</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div><br>
+                <!-- Extension & Community Oriented Activities  -->
+                <label for="">9. Extension & Community Oriented Activities :</label>
+                <button type="button" onclick="extensionNCommunityActivFields()">Click here to add the data</button>
+                <div class="form-group" id="extensionNCommunityActivFields"><br>
+                    <button type="button" onclick="addEntry('extensionNCommunityActiv')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Title /Type of Extension & Community oriented Activity</th>
+                            <th>Date</th>                            
+                            <th>Target Audience</th>                            
+                            <th>Any other details</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br><br> 
+                <!-- Awards & Recognitions -->
+                <label for="">10. Awards & Recognitions :</label>
+                <button type="button" onclick="awardsRecognsFields()">Click here to add the data</button>
+                <div class="form-group" id="awardsRecognsFields"><br>
+                    <button type="button" onclick="addEntry('awardsRecogns')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Title of the Award/ Recognition</th>
+                            <th>State/National/International</th>
+                            <th>Organization</th>
+                            <th>Date of Award</th>                            
+                            <th>Any other details</th>
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br><br> 
+                <!-- Projects initiated or completed -->
+                <label for="">11. Projects initiated or completed :</label>
+                <button type="button" onclick="projectsInitiNcompFields()">Click here to add the data</button>
+                <div class="form-group" id="projectsInitiNcompFields"><br>
+                    <button type="button" onclick="addEntry('projectsInitiNcomp')">Add Entry</button>
+                    <table>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Title of the Project</th>
+                            <th>State/National/International</th>
+                            <th>Any other details</th>
+                            
+                            <!-- Add more table headers as needed -->
+                        </tr>
+                    </table>
+                </div>
+                <br><br> 
+                <div class="fields">
+                    <label for="message">Any other remarks/suggestions :</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                            
+
+        </form>
+    </div>
+   <script src="/app.js"></script>
+</body>
+</html>
